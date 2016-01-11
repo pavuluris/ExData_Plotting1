@@ -10,13 +10,13 @@ plot4 <- function() {
   plot(df$timestamp,df$Sub_metering_1, type="l", xlab="", ylab="Energy sub metering")
   lines(df$timestamp,df$Sub_metering_2,col="red")
   lines(df$timestamp,df$Sub_metering_3,col="blue")
-  legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lwd=1,  lty=2, col=c("black", "red", "blue"),cex = .54, 
-         yjust = 1 )
+  legend("topright", col=c("black","red","blue"), c("Sub_metering_1","Sub_metering_2", "Sub_metering_3"),
+         lwd=c(1,1),cex=0.4,xjust= 1)
   #PLOT 4
   plot(df$timestamp,df$Global_reactive_power, type="l", xlab="datetime", ylab="Global_reactive_power")
   
   #OUTPUT
-  dev.copy(png, file="plot4.png", width=480, height=480)
+  dev.copy(png, file="plot4.png", width=800, height=600)
   dev.off()
   cat("plot4.png has been saved in", getwd())
 }
